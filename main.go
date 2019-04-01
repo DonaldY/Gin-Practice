@@ -17,5 +17,13 @@ func main() {
 		})
 	})
 
-	_ = r.Run(":8080")
+	r.GET("/ping2", func(context *gin.Context) {
+
+		context.JSON(200, gin.H{
+			"username": "DONALD",
+			"password": "123",
+		})
+	})
+
+	_ = r.Run(":8081")
 }
